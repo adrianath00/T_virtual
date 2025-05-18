@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalogo>
+  <producto>
+    <referencia>MS001</referencia>
+    <nombre>Vendas de Gasa 7 cm x 5 m (pack 10)</nombre>
+    <precio>14.20</precio>
+  </producto>
+  <producto>
+  <referencia>MS002</referencia>
+    <nombre>PAlgodón Hidrófilo 250 g</nombre>
+    <precio>2.80</precio>
+  </producto>
+  <producto>
+  <referencia>MS003</referencia>
+    <nombre>Esparadrapo de Tela 5 cm x 10 m/nombre>
+    <precio>3.80</precio>
+  </producto>
+  <producto>
+  <referencia>MS004</referencia>
+    <nombre>Jeringa Estéril 10 ml sin aguja (pack 5)</nombre>
+    <precio>1.90</precio>
+  </producto>
+  <producto>
+  <referencia>MS005</referencia>
+    <nombre>Agujas Hipodérmicas 0.8 x 40 mm (caja 100)</nombre>
+    <precio>6.70</precio>
+  </producto>
+  <producto>
+  <referencia>MS006</referencia>
+    <nombre>Suero Fisiológico 500 ml</nombre>
+    <precio>1.50</precio>
+  </producto>
+  <producto>
+  <referencia>MS007</referencia>
+    <nombre>Batas Desechables No Tejidas (pack 10)</nombre>
+    <precio>8.95</precio>
+  </producto>
+  <producto>
+  <referencia>MS008</referencia>
+    <nombre>Tijeras de Vendaje Inoxidable</nombre>
+    <precio>5.80</precio>
+  </producto>
+  <producto>
+  <referencia>MS009</referencia>
+    <nombre>Campo Quirúrgico Estéril 75 x 90 cm (unidad) </nombre>
+    <precio>2.10</precio>
+  </producto>
+  <producto>
+  <referencia>MS010</referencia>
+    <nombre>Mascarillas FFP2 NR (pack 10) </nombre>
+    <precio>9.90</precio>
+  </producto>
+</catalogo>
