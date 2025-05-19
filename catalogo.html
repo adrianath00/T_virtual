@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Catálogo de Productos Médicos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f2f5;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #003366;
+    }
+
+    .catalogo {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .producto {
+      background-color: white;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+
+    .producto:hover {
+      transform: scale(1.03);
+    }
+
+    .producto h2 {
+      font-size: 1.1rem;
+      color: #222;
+    }
+
+    .producto p {
+      margin: 5px 0;
+    }
+
+    .precio {
+      color: #008000;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Catálogo de Productos Médicos</h1>
+
+  <div class="catalogo">
+    <div class="producto">
+      <h2>Vendas de Gasa 7 cm x 5 m (pack 10)</h2>
+      <p><strong>Ref:</strong> MS001</p>
+      <p class="precio">$4.20</p>
+    </div>
+    <div class="producto">
+      <h2>Algodón Hidrófilo 250 g</h2>
+      <p><strong>Ref:</strong> MS002</p>
+      <p class="precio">$2.80</p>
+    </div>
+    <div class="producto">
+      <h2>Esparadrapo de Tela 5 cm x 10 m</h2>
+      <p><strong>Ref:</strong> MS003</p>
+      <p class="precio">$3.50</p>
+    </div>
+    <div class="producto">
+      <h2>Jeringa Estéril 10 ml sin aguja (pack 5)</h2>
+      <p><strong>Ref:</strong> MS004</p>
+      <p class="precio">$1.90</p>
+    </div>
+    <div class="producto">
+      <h2>Agujas Hipodérmicas 0.8 x 40 mm (caja 100)</h2>
+      <p><strong>Ref:</strong> MS005</p>
+      <p class="precio">$6.70</p>
+    </div>
+    <div class="producto">
+      <h2>Suero Fisiológico 500 ml</h2>
+      <p><strong>Ref:</strong> MS006</p>
+      <p class="precio">$1.50</p>
+    </div>
+    <div class="producto">
+      <h2>Batas Desechables No Tejidas (pack 10)</h2>
+      <p><strong>Ref:</strong> MS007</p>
+      <p class="precio">$8.95</p>
+    </div>
+    <div class="producto">
+      <h2>Tijeras de Vendaje Inoxidable</h2>
+      <p><strong>Ref:</strong> MS008</p>
+      <p class="precio">$5.80</p>
+    </div>
+    <div class="producto">
+      <h2>Campo Quirúrgico Estéril 75 x 90 cm (unidad)</h2>
+      <p><strong>Ref:</strong> MS009</p>
+      <p class="precio">$2.10</p>
+    </div>
+    <div class="producto">
+      <h2>Mascarillas FFP2 NR (pack 10)</h2>
+      <p><strong>Ref:</strong> MS010</p>
+      <p class="precio">$9.90</p>
+    </div>
+  </div>
+</body>
+</html>

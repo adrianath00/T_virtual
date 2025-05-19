@@ -1,20 +1,19 @@
-<?php
-include 'conexion.php';
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Iniciar sesión</title>
+</head>
+<body>
+    <h2>Login</h2>
+    <form action="validad_login.php" method="POST">
+        <label for="correo">Correo:</label>
+        <input type="text" name="correo" id="correo"><br><br>
 
-$usuario = $_POST['usuario'];
-$contrasena = $_POST['contrasena'];
+        <label for="password">Contraseña:</label>
+        <input type="password" name="password" id="password"><br><br>
 
-$sql = "SELECT contrasena FROM usuarios WHERE usuario = ?";
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("s", $usuario);
-$stmt->execute();
-$stmt->bind_result($hash);
-
-if ($stmt->fetch() && password_verify($contrasena, $hash)) {
-    session_start();
-    $_SESSION['usuario'] = $usuario;
-    header("Location: tienda.php");
-} else {
-    echo "Usuario o contraseña incorrectos.";
-}
-?>
+        <input type="submit" value="Iniciar sesión">
+    </form>
+</body>
+</html>

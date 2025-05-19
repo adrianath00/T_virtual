@@ -1,37 +1,50 @@
 <?php
 session_start();
-include 'Conexion.php';
+require_once 'Conexion.php';
 
-// Verificar que los datos fueron enviados por POST
-if (isset($_POST['usuario']) && isset($_POST['contrasena'])) {
-    $usuario = $_POST['usuario'];
-    $contrasena = $_POST['contrasena'];
+error_reporting(E_ALL & ~E_NOTICE);
 
-    // Mostrar para depuración (puedes quitar esto después)
-    echo ($usuario);
-    echo ($contrasena);
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
-    $dConnect = new Conexion;
+    // Solo para debug: ver qué se está enviando
+    // echo "<pre>"; print_r($_POST); echo "</pre>"; exit;
 
-    // Buscar usuario específico
-    $sql = "SELECT * FROM usuarios WHERE usuario = ?";
-    $stmt = $dConnect->get_connection()->prepare($sql);
+    $usuario = isset($_POST['usuario']) ? trim($_POST['usuario']) : '';
+    $password = isset($_POST['password']) ? trim($_POST['password']) : '';
+
+    if (empty($usuario) || empty($password)) {
+        die("Por favor, completa todos los campos.");
+    }
+
+    $conexion = new Conexion();
+    $conn = $conexion->getConnection();
+
+    $stmt = $conn->prepare("SELECT password FROM usuarios WHERE usuario = ?");
+    if (!$stmt) {
+        die("Error al preparar la consulta: " . $conn->error);
+    }
+
     $stmt->bind_param("s", $usuario);
     $stmt->execute();
-    $result = $stmt->get_result();
+    $stmt->store_result();
 
-    if ($row = $result->fetch_assoc()) {
-        if (password_verify($contrasena, $row['contrasena'])) {
+    if ($stmt->num_rows === 1) {
+        $stmt->bind_result($hash);
+        $stmt->fetch();
+
+        if (password_verify($password, $hash)) {
             $_SESSION['usuario'] = $usuario;
-            header("Location: tienda.php");
-            exit();
+            header("Location: catalogo.php");
+            exit;
         } else {
-            echo "Contraseña incorrecta.";
+            die("Contraseña incorrecta.");
         }
     } else {
-        echo "Usuario no encontrado.";
+        die("Usuario no encontrado.");
     }
+
+    $stmt->close();
+    $conn->close();
 } else {
-    echo "Faltan datos de usuario o contraseña.";
+    die("Acceso no permitido.");
 }
-?>
